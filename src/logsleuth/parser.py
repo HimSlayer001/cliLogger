@@ -48,7 +48,7 @@ FORMATS: tuple[LogFormat, ...] = (
 )
 
 
-def _parse_timestamp(value: str) -> datetime:
+def parse_timestamp(value: str) -> datetime:
     """Parse an ISO-style timestamp; aware values are converted to naive UTC."""
     parsed = datetime.fromisoformat(value)
     if parsed.tzinfo is not None:
@@ -67,7 +67,7 @@ def parse_line(line: str) -> LogEntry:
         if match is None:
             continue
         try:
-            timestamp = _parse_timestamp(match["ts"])
+            timestamp = parse_timestamp(match["ts"])
         except ValueError as exc:
             raise ParseError(raw, "invalid timestamp") from exc
         try:

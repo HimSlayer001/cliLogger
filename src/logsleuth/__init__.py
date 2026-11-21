@@ -1,2 +1,5 @@
-def main() -> None:
-    print("Hello from logsleuth!")
+"""logsleuth: inspect and summarise log files."""
+
+from logsleuth.cli import main
+
+__all__ = ["main"]
