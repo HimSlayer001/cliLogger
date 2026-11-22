@@ -195,8 +195,9 @@ print(len(reader.skipped))  # 0, lines that could not be parsed
 ```sh
 uv sync
 uv run pytest
+uv run pytest --cov   # coverage, with a 95% minimum
 uv run ruff check
-uv run mypy src
+uv run mypy src   # strict
 ```
 
 Tests live in `tests/`, with a sample log in `tests/fixtures/sample.log`.

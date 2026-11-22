@@ -283,3 +283,14 @@ def test_keyboard_interrupt_exits_130(monkeypatch: pytest.MonkeyPatch):
 
     monkeypatch.setattr("builtins.print", interrupt)
     assert main(["filter", FIXTURE]) == EXIT_INTERRUPTED
+
+
+def test_summary_text_on_empty_input(
+    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+):
+    monkeypatch.setattr(sys, "stdin", io.StringIO(""))
+    assert main(["summary"]) == EXIT_OK
+    out = capsys.readouterr().out
+    assert "Entries: 0" in out
+    assert "Time range" not in out
+    assert "Top messages" not in out

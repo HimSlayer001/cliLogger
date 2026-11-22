@@ -1,10 +1,28 @@
 [project]
 name = "logsleuth"
 version = "0.1.0"
-description = "Add your description here"
+description = "Summarise and filter log files from the command line, and find the messages that repeat the most."
 readme = "README.md"
 requires-python = ">=3.14"
+authors = [{ name = "Kanav Sooden", email = "kasooden@gmail.com" }]
+keywords = ["logs", "log-analysis", "cli", "parser", "observability"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: System :: Logging",
+    "Topic :: Utilities",
+]
 dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/HimSlayer001/cliLogger"
+Source = "https://github.com/HimSlayer001/cliLogger"
+Issues = "https://github.com/HimSlayer001/cliLogger/issues"
 
 [project.scripts]
 logsleuth = "logsleuth:main"
@@ -17,5 +35,20 @@ build-backend = "uv_build"
 dev = [
     "mypy>=2.2.0",
     "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
     "ruff>=0.15.21",
 ]
+
+[tool.mypy]
+strict = true
+python_version = "3.14"
+files = ["src"]
+
+[tool.coverage.run]
+source = ["logsleuth"]
+branch = true
+omit = ["*/__main__.py"]  # exercised through a subprocess, which is not measured
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 95

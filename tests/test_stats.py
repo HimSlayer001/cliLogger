@@ -242,3 +242,10 @@ def test_detect_bursts_validates_arguments():
         detect_bursts(histogram_of(1), factor=0)
     with pytest.raises(ValueError):
         detect_bursts(histogram_of(1), min_count=0)
+
+
+def test_detect_bursts_non_adjacent_hot_buckets_are_separate_bursts():
+    # A hand-built histogram with missing keys: 5 and 7 are hot but not adjacent.
+    histogram = {at(0): 0, at(1): 0, at(2): 0, at(3): 0, at(4): 0, at(5): 10, at(7): 10}
+    bursts = detect_bursts(histogram)
+    assert [(b.start, b.end) for b in bursts] == [(at(5), at(6)), (at(7), at(8))]
