@@ -1,0 +1,18 @@
+2026-07-11 10:01:00 ERROR upstream timeout after 31s
+2026-07-11 10:02:00 ERROR upstream timeout after 32s
+2026-07-11 10:03:00 ERROR upstream timeout after 33s
+2026-07-11 10:04:00 ERROR upstream timeout after 34s
+2026-07-11 10:05:00 ERROR upstream timeout after 35s
+2026-07-11 10:06:00 ERROR upstream timeout after 36s
+2026-07-11 10:07:00 ERROR upstream timeout after 37s
+2026-07-11 10:08:00 ERROR connection to db-0 refused
+2026-07-11 10:08:05 ERROR connection to db-2 refused
+2026-07-11 10:08:10 ERROR connection to db-1 refused
+2026-07-11 10:08:15 ERROR connection to db-0 refused
+2026-07-11 10:08:20 ERROR connection to db-2 refused
+2026-07-11 10:08:25 ERROR connection to db-1 refused
+2026-07-11 10:08:30 ERROR connection to db-0 refused
+2026-07-11 10:08:35 ERROR connection to db-2 refused
+2026-07-11 10:08:40 ERROR connection to db-1 refused
+2026-07-11 10:08:45 ERROR connection to db-0 refused
+2026-07-11 10:09:00 INFO recovered

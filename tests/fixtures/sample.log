@@ -1,0 +1,7 @@
+2026-07-11 14:03:20 INFO service started on port 8080
+2026-07-11 14:03:21 DEBUG loaded 42 routes
+2026-07-11 14:03:22 ERROR disk full on /dev/sda1
+2026-07-11 14:03:25 WARNING retrying connection to db-1 (attempt 2)
+2026-07-11 14:03:31 ERROR connection to db-1 refused
+2026-07-11 14:04:02 INFO request id=0x3fa9 completed in 120ms
+2026-07-11 14:04:40 CRITICAL out of memory, shutting down
